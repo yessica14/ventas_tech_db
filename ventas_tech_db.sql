@@ -1,3 +1,13 @@
+-- === SECCIÓN 1: DROP ===
+
+DROP TABLE IF EXISTS ventas;
+DROP TABLE IF EXISTS productos;
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS categorias;
+
+
+-- === SECCIÓN 2: CREATE ===
+
 CREATE TABLE categorias (
  id_categoria INT PRIMARY KEY,
  nombre_categoria VARCHAR(50) NOT NULL,
@@ -30,6 +40,7 @@ precio_unitario DECIMAL(10,2) NOT NULL,
 fecha_venta DATE NOT NULL
 )
 
+-- === SECCIÓN 3: INSERT ===
 
 INSERT INTO categorias (id_categoria, nombre_categoria, descripcion) VALUES
   (1, 'Computación',    'Laptops, PCs y monitores'),
@@ -64,8 +75,9 @@ INSERT INTO categorias (id_categoria, nombre_categoria, descripcion) VALUES
   ( 9, 4, 4, 1,  120.00, '2024-03-14'),
   (10, 5, 3, 2,  450.00, '2024-03-15');
 
+-- === SECCIÓN 4: VALIDACIÓN ===
 
-  SELECT * FROM categorias;   -- esperado: 4 filas
+SELECT * FROM categorias;   -- esperado: 4 filas
 SELECT * FROM clientes;     -- esperado: 5 filas
 SELECT * FROM productos;    -- esperado: 6 filas
 SELECT * FROM ventas;       -- esperado: 10 filas
